@@ -11,4 +11,3 @@ export default pinia
 // import { useCounterStore } from './modules/counter'
 // export { useCounterStore }
 export * from './modules/user' //接收所有的导出
-export * from './modules/counter'

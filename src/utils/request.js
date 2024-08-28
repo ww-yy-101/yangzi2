@@ -15,9 +15,9 @@ const instance = axios.create({
 instance.interceptors.request.use(
   (config) => {
     // TODO 2.携带token
-    const useStore = useUserStore()
-    if (useStore.token) {
-      config.headers.Authorization = useStore.token
+    const userStore = useUserStore()
+    if (userStore.token) {
+      config.headers.Authorization = userStore.token
     }
     return config
   },
@@ -32,6 +32,8 @@ instance.interceptors.response.use(
     if (res.data.code === 0) {
       return res
     }
+    // console.log(res)
+
     // TODO 3.处理业务失败，给错误提示，抛出错误
     ElMessage({
       message: res.data.message || '服务异常',
