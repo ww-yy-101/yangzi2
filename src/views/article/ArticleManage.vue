@@ -31,7 +31,6 @@ getArticleList()
 // 处理分页逻辑
 const onSizeChange = (size) => {
   // console.log('当前每页条数', size)
-  // 主要是每页条数变化了，那么原本正在访问的当前页意义不大了，数据已经不在原来那一页了
   // 重新从第一页渲染即可
   params.value.pagenum = 1
   params.value.pagesize = size
